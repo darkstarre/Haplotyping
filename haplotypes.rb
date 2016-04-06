@@ -9,7 +9,7 @@ class Haplotypes
   end
 
   present_day = [{"R1b152" => "Tuscany"}]
- 
+  #move to data.rb for lineage stacking 
   $classical_Italy = [{"type" => "J2",       "people" => "Etruscans"},
                       {"type" => "E1b1b",    "people" => "Etruscans"},
                       {"type" => "G2a",      "people" => "Etruscans"},
@@ -36,6 +36,11 @@ class Haplotypes
     query_start = "SELECT place FROM 'Present' WHERE"
     query = [query_start, query].join(' ')
     results = @DB.execute(query).flatten
+
+  end
+
+  def inverse_phylogeny(type)
+    type = "R1b"
 
   end
 end

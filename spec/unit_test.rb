@@ -29,4 +29,8 @@ class UnitTest < Minitest::Test
 
     assert_equal ["Abruzzo","Calabria","Friuli-Venezia Giulia", "Liguria", "Marches","Sardinia", "Tuscany","Trentino-South Tyrol","Veneto"], Haplotypes.new.search_database("L")
   end
+
+  def test_it_gives_lineage_backwards
+
+  end
 end
