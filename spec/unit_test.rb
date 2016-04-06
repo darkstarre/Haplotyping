@@ -18,9 +18,15 @@ class UnitTest < Minitest::Test
   end
 
   def test_it_queries_the_SQL_database
-    query = "Q != 0;mor"
+    query = "Q != 0;"
     
     assert_equal ["Calabria","Latium","Sicily"], Haplotypes.new.search_database(query)
 
+  end
+
+  def test_it_finds_all_instances_of_the_same_type
+    query = "L != 0;"
+
+    assert_equal ["Abruzzo","Calabria","Friuli-Venezia Giulia", "Liguria", "Marches","Sardinia", "Tuscany","Trentino-South Tyrol","Veneto"], Haplotypes.new.search_database("L")
   end
 end
