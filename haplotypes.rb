@@ -9,13 +9,6 @@ class Haplotypes
     @DB = SQLite3::Database.new("../Haplotypes.sqlite")
   end
 
-  present_day = [{"R1b152" => "Tuscany"}]
-  #move to data.rb for lineage stacking 
-  $classical_Italy = [{"type" => "J2",       "people" => "Etruscans"},
-                      {"type" => "E1b1b",    "people" => "Etruscans"},
-                      {"type" => "G2a",      "people" => "Etruscans"},
-                      {"type" => "R1b-M269", "people" => "Etruscans"}]
-
   def compare(type1,type2)
     if type1 == type2
       true
