@@ -31,6 +31,9 @@ class UnitTest < Minitest::Test
   end
 
   def test_it_gives_lineage_backwards
+    type = "G2"
+
+    assert_equal $groupG, Haplotypes.new.return_group(type)
 
   end
 end

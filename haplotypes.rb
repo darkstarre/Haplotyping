@@ -4,6 +4,7 @@ require 'rubygems'
 
 class Haplotypes
  include Enumerable
+  
   def initialize
     @DB = SQLite3::Database.new("../Haplotypes.sqlite")
   end
@@ -39,8 +40,16 @@ class Haplotypes
 
   end
 
-  def inverse_phylogeny(type)
-    type = "R1b"
-
+  def return_group(type)
+    first = type.chars.first
+    if first == "E"
+      return $groupE1b
+    elsif first == "G"
+      return $groupG
+    elsif first == "I" || first == "J"
+      return $groupIJ
+    elsif first == "Q" || first == "N" || first == "K" || first == "T" || first == "P" || first == "R"
+      return $groupK
+    end
   end
 end
